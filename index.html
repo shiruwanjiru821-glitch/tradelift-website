@@ -161,4 +161,73 @@ if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
   window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => {}));
 }
 </script>
+ !-- TradeLift Seller Verification -->
+<section id="seller-verification" style="max-width:600px;margin:30px auto;padding:20px;font-family:Arial,sans-serif;border:1px solid #ddd;border-radius:12px;">
+  <h2>Become a TradeLift Seller</h2>
+  <p>Apply to become a seller. Our administrator will review your application.</p>
+
+  <form id="sellerForm">
+    <label>Full Name</label>
+    <input type="text" id="sellerName" required
+      placeholder="Enter your full name"
+      style="display:block;width:100%;padding:12px;margin:8px 0 16px;box-sizing:border-box;">
+
+    <label>Phone Number</label>
+    <input type="tel" id="sellerPhone" required
+      placeholder="e.g. 0712345678"
+      style="display:block;width:100%;padding:12px;margin:8px 0 16px;box-sizing:border-box;">
+
+    <label>Email Address</label>
+    <input type="email" id="sellerEmail" required
+      placeholder="Enter your email"
+      style="display:block;width:100%;padding:12px;margin:8px 0 16px;box-sizing:border-box;">
+
+    <label>What do you want to sell?</label>
+    <input type="text" id="sellerProduct" required
+      placeholder="e.g. Clothes, shoes, electronics"
+      style="display:block;width:100%;padding:12px;margin:8px 0 16px;box-sizing:border-box;">
+
+    <button type="submit"
+      style="width:100%;padding:14px;background:#128C4A;color:white;border:0;border-radius:8px;font-size:16px;cursor:pointer;">
+      Submit for Verification on WhatsApp
+    </button>
+  </form>
+
+  <p id="sellerMessage" role="status"></p>
+</section>
+
+<script>
+document.getElementById("sellerForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("sellerName").value.trim();
+  const phone = document.getElementById("sellerPhone").value.trim();
+  const email = document.getElementById("sellerEmail").value.trim();
+  const product = document.getElementById("sellerProduct").value.trim();
+
+  // Replace this with the administrator's WhatsApp number.
+  // Use country code 254 for Kenya, without + or spaces.
+  const adminNumber = "2547XXXXXXXX";
+
+  if (adminNumber.includes("X")) {
+    document.getElementById("sellerMessage").textContent =
+      "The administrator's WhatsApp number has not been configured yet.";
+    return;
+  }
+
+  const message =
+    "TRADELIFT SELLER VERIFICATION REQUEST\n\n" +
+    "Name: " + name + "\n" +
+    "Phone: " + phone + "\n" +
+    "Email: " + email + "\n" +
+    "Products: " + product + "\n\n" +
+    "Please review this seller application and approve or reject it.";
+
+  const whatsappURL =
+    "https://wa.me/" + adminNumber + "?text=" +
+    encodeURIComponent(message);
+
+  window.open(whatsappURL, "_blank");
+});
+</script>
 </body></html>
