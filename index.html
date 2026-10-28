@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#176b4d"><meta name="description" content="Tradelift Limited marketplace with M-Pesa sale-fee workflow."><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>Tradelift Limited Marketplace</title>
+<style>
+:root{--g:#176b4d;--p:#e8f4ed;--ink:#17251d;--mut:#68776e;--line:#e2e9e4;--bg:#f7f9f7}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.nav{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);padding:12px max(16px,calc((100% - 1120px)/2));display:flex;align-items:center;gap:12px;z-index:3}.brand{font-weight:850;white-space:nowrap;display:flex;align-items:center;gap:9px}.logo{background:var(--g);color:white;width:37px;height:37px;border-radius:11px;display:grid;place-items:center}.search{display:flex;flex:1;gap:7px}.search input{width:100%;min-width:0;border:1px solid var(--line);border-radius:10px;padding:10px}.btn{border:0;border-radius:10px;padding:10px 14px;font-weight:750}.primary{background:var(--g);color:white}.soft{background:var(--p);color:var(--g)}main{max-width:1120px;margin:auto;padding:22px 18px 55px}.hero{background:linear-gradient(120deg,#123e2e,#1c7953);color:white;border-radius:20px;padding:28px;display:flex;justify-content:space-between;align-items:center;gap:18px}.hero h1{font-size:clamp(30px,4vw,46px);line-height:1.05;margin:9px 0}.hero p{color:#d9eee2;max-width:570px}.kicker{color:#c4ecd4;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;font-size:12px}.art{font-size:52px;line-height:1.6;text-align:center;min-width:190px}.pillrow{display:flex;gap:8px;overflow:auto;padding:20px 0 14px}.pill{border:1px solid var(--line);background:white;border-radius:30px;padding:8px 13px;white-space:nowrap;color:#526157}.pill.active{background:var(--g);color:white;border-color:var(--g)}.head{display:flex;justify-content:space-between;align-items:end;gap:10px;margin:12px 0 15px}.head h2{margin:0;font-size:23px}.muted{color:var(--mut);font-size:13px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.card{background:white;border:1px solid var(--line);border-radius:15px;overflow:hidden}.pic{height:145px;background:linear-gradient(135deg,#edf5ef,#dcebe1);display:grid;place-items:center;font-size:55px;position:relative}.cat{position:absolute;left:8px;top:8px;background:white;border-radius:6px;padding:4px 7px;font-size:10px;font-weight:750}.body{padding:12px}.name{font-weight:750;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.price{color:var(--g);font-weight:850;font-size:19px;margin-top:3px}.loc{font-size:12px;color:var(--mut);margin-top:5px}.contact{width:100%;border:0;background:var(--p);color:var(--g);padding:8px;border-radius:8px;margin-top:10px;font-weight:750}.empty{grid-column:1/-1;padding:36px;text-align:center;background:white;border-radius:12px;color:var(--mut)}footer{text-align:center;padding:22px;border-top:1px solid var(--line);color:var(--mut);font-size:12px}.back{display:none;position:fixed;inset:0;background:#0009;z-index:8;align-items:center;justify-content:center;padding:14px}.back.show{display:flex}.modal{background:white;border-radius:18px;padding:22px;width:min(560px,100%);max-height:94vh;overflow:auto}.mhead{display:flex;justify-content:space-between;align-items:center}.mhead h2{margin:0}.close{border:0;border-radius:8px;padding:7px 12px;font-size:21px}.field{display:grid;gap:5px;margin:12px 0}.field label{font-size:13px;font-weight:750}.field input,.field select,.field textarea{padding:10px;border:1px solid var(--line);border-radius:9px;width:100%;background:#fff}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.fee{background:var(--p);border:1px solid #d3e8db;border-radius:10px;padding:12px;display:flex;justify-content:space-between;align-items:center;margin:13px 0}.fee strong{font-size:20px;color:var(--g)}.notice{font-size:12px;color:var(--mut)}.toast{display:none;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#17251d;color:white;padding:12px 16px;border-radius:11px;z-index:12;max-width:90%}.toast.show{display:block}
+
+.chat-back{display:none;position:fixed;inset:0;background:#0009;z-index:15;padding:12px;align-items:center;justify-content:center}.chat-back.show{display:flex}.chat-modal{width:min(980px,100%);height:min(760px,95vh);background:#fff;border-radius:18px;overflow:hidden;display:flex;flex-direction:column}.chat-top{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--line)}.chat-layout{display:grid;grid-template-columns:300px 1fr;min-height:0;flex:1}.chat-inbox{border-right:1px solid var(--line);overflow:auto}.chat-thread{display:flex;flex-direction:column;min-width:0;min-height:0}.thread-head{padding:12px 16px;border-bottom:1px solid var(--line);font-weight:800}.thread-messages{padding:16px;flex:1;overflow:auto;background:#f7faf8;display:flex;flex-direction:column;gap:10px}.bubble{max-width:82%;padding:10px 12px;border-radius:13px;background:#fff;border:1px solid var(--line);overflow-wrap:anywhere}.bubble.mine{align-self:flex-end;background:#dff4e7;border-color:#c9e8d5}.bubble small{display:block;color:var(--mut);font-size:10px;margin-top:4px}.chat-compose{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line)}.chat-compose input{flex:1;min-width:0;border:1px solid var(--line);border-radius:10px;padding:11px}.thread-item{padding:12px;border:0;border-bottom:1px solid var(--line);width:100%;text-align:left;background:white;display:block}.thread-item.active{background:var(--p)}.thread-item strong{display:block}.thread-item small{display:block;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.chat-empty{margin:auto;text-align:center;color:var(--mut);padding:24px}.login-screen{position:fixed;inset:0;z-index:20;background:linear-gradient(135deg,#123e2e,#1c7953);display:flex;align-items:center;justify-content:center;padding:18px;overflow:auto}
+.login-screen.hidden{display:none}.login-card{background:#fff;width:min(440px,100%);border-radius:20px;padding:26px;box-shadow:0 20px 60px #0003}.login-card h1{font-size:27px;line-height:1.15;margin:16px 0 8px}.login-logo{width:48px;height:48px;font-size:24px}
+
+@media(max-width:850px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.art{min-width:125px;font-size:43px}}
+@media(max-width:600px){.chat-back{padding:0}.chat-modal{height:100vh;border-radius:0}.chat-layout{grid-template-columns:110px 1fr}.thread-item{padding:9px 7px}.thread-item strong{font-size:12px}.thread-item small{font-size:10px}.chat-compose{padding:8px}.nav{flex-wrap:wrap;padding:10px 12px}.brand{font-size:14px}.search{order:3;flex-basis:100%}.nav .btn{padding:9px}.hero{padding:21px;display:block}.art{display:none}.hero h1{font-size:34px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}main{padding:15px 12px 35px}.pic{height:120px;font-size:45px}.body{padding:9px}.name{font-size:13px}.price{font-size:17px}.two{grid-template-columns:1fr}.head h2{font-size:20px}}
+
+.photo-preview{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.photo-preview img{width:76px;height:76px;object-fit:cover;border-radius:10px;border:1px solid #ddd}
+.product-photo{width:100%;height:170px;object-fit:cover;border-radius:12px 12px 0 0;display:block}
+small.muted{display:block;color:#667085;margin-top:5px;font-size:12px}
+
+</style></head>
+<body>
+<header class="nav"><div class="brand"><div class="logo">T</div>Tradelift Limited</div><div class="search"><input id="q" placeholder="Search all products…" aria-label="Search products"><button class="btn primary" onclick="render()">Search</button></div><button class="btn soft" onclick="openChats()">Messages</button><button class="btn soft" id="accountBtn" onclick="openLogin()">Sign in</button><button class="btn soft" id="usersBtn" onclick="openUsers()" style="display:none">User tracking</button><button class="btn primary" onclick="openListing()">＋ Sell item</button></header>
+<main><section class="hero"><div><div class="kicker">Kenya's open marketplace</div><h1>Find it. List it. Trade it.</h1><p>Discover deals across every category. Buyers browse for free. Sellers pay a transaction fee only when a sale is completed.</p><button class="btn" style="background:white;color:#15583f" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Explore products ↓</button></div><div class="art">📱 🛋️<br>👟 🎧 🚲</div></section>
+<div class="pillrow" id="filters"></div><section id="products"><div class="head"><div><h2>Explore products</h2><div id="count" class="muted">Sample listings · Free to browse</div></div><select id="sort" onchange="render()" style="padding:8px;border:1px solid var(--line);border-radius:9px;background:white"><option value="recent">Recently listed</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option></select></div><div class="grid" id="grid"></div></section></main>
+<footer>Tradelift Limited · Android + website concept · Buyer browsing is free · Sale fee: 12% on all goods · M-Pesa only<br>Demo: in-app messaging is saved on this device only; shared real-time chat needs a production backend. M-Pesa is not live.</footer>
+<div class="login-screen" id="loginScreen" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+ <div class="login-card"><div class="logo login-logo">T</div><h1 id="loginTitle">Welcome to Tradelift Limited</h1><p class="muted">Sign in to continue and keep track of your marketplace activity.</p>
+ <form id="loginForm"><div class="field"><label for="loginName">Full name *</label><input id="loginName" required maxlength="80" placeholder="Your full name"></div><div class="field"><label for="loginPhone">Phone number *</label><input id="loginPhone" required type="tel" maxlength="20" placeholder="07XX XXX XXX"></div><div class="field"><label for="loginRole">Account type *</label><select id="loginRole" required><option value="buyer">Buyer</option><option value="seller">Seller</option><option value="admin">Administrator (demo only)</option></select></div><button class="btn primary" style="width:100%" type="submit">Continue</button></form>
+ <p class="notice">Prototype sign-in only: this demo does not verify identity or use passwords. User records are saved only in this browser/device. Administrator access is not secure until real authentication and server-side permissions are added.</p></div>
+</div>
+<div class="back" id="usersBack" role="dialog" aria-modal="true"><div class="modal"><div class="mhead"><h2>User tracking (demo)</h2><button class="close" onclick="closeUsers()">×</button></div><p class="muted">Accounts recorded on this browser only. This is not a shared database.</p><div id="usersTable"></div><button class="btn soft" onclick="exportUsers()">Export users CSV</button></div></div>
+<div class="chat-back" id="chatBack" role="dialog" aria-modal="true" aria-label="Buyer and seller messages"><section class="chat-modal"><div class="chat-top"><div><b>Tradelift Messages</b><div class="muted">Buyer and seller conversations</div></div><button class="close" onclick="closeChats()" aria-label="Close messages">×</button></div><div class="chat-layout"><aside class="chat-inbox" id="chatInbox"></aside><section class="chat-thread"><div class="thread-head" id="threadHead">Choose a conversation</div><div class="thread-messages" id="threadMessages"><div class="chat-empty">Select a conversation or contact a seller from a product.</div></div><form class="chat-compose" id="chatCompose"><input id="chatInput" maxlength="1000" placeholder="Write a message…" aria-label="Message" required><button class="btn primary" type="submit">Send</button></form></section></div></section></div>
+<div class="back" id="back" role="dialog" aria-modal="true"><div class="modal"><div class="mhead"><h2>List your item</h2><button class="close" onclick="closeListing()">×</button></div><form id="form">
+<div class="field"><label for="title">Product title *</label><input id="title" maxlength="70" required placeholder="e.g. Samsung Galaxy A15"></div>
+<div class="two"><div class="field"><label for="amount">Sale price (KSh) *</label><input id="amount" type="number" min="1" required placeholder="8500"></div><div class="field"><label for="category">Category *</label><select id="category" required><option value="">Choose category</option><option>Phones & Electronics</option><option>Fashion</option><option>Home & Furniture</option><option>Vehicles</option><option>Property</option><option>Beauty & Health</option><option>Sports & Outdoors</option><option>Baby & Kids</option><option>Books & Education</option><option>Other</option></select></div></div>
+<div class="field"><label for="goodsType">Type of goods *</label><select id="goodsType" required><option value="physical">Physical goods — 12% fee</option><option value="electronic">Electronic goods — 12% fee</option></select></div>
+<div class="two"><div class="field"><label for="location">Location *</label><input id="location" required placeholder="Nairobi, Kenya"></div><div class="field"><label for="phone">Seller phone *</label><input id="phone" type="tel" required placeholder="07XX XXX XXX"></div></div>
+
+<div class="field">
+  <label for="photos">Product photos (up to 5)</label>
+  <input id="photos" name="photos" type="file" accept="image/*" multiple capture="environment" />
+  <small class="muted">Choose photos from your phone or take new pictures. Images are resized before saving.</small>
+  <div id="photoPreview" class="photo-preview" aria-live="polite"></div>
+</div>
+
+<div class="field"><label for="emoji">Product icon</label><select id="emoji"><option>📦</option><option>📱</option><option>💻</option><option>👟</option><option>👕</option><option>🛋️</option><option>🚗</option><option>🏠</option><option>🎧</option><option>🚲</option></select></div>
+<div class="field"><label for="desc">Description</label><textarea id="desc" rows="2" maxlength="400" placeholder="Condition, features and details"></textarea></div>
+<div class="fee"><span><b>Estimated sale fee</b><br><span class="muted" id="feeRate">9% of sale price, due only after a successful sale</span></span><strong id="feeAmount">KSh 0</strong></div>
+<div class="field"><label>Fee recipient number</label><input value="0791933387" readonly aria-label="Fee recipient number"><small class="muted">Configured recipient only; money is not sent by this demo.</small></div>
+<div class="field"><label>Sale-fee payment method</label><input value="M-Pesa STK Push after item is marked sold" readonly><small class="muted">The seller must authorize the M-Pesa request. Live STK Push is not connected in this demo.</small></div>
+<button class="btn primary" style="width:100%" type="submit">Save demo listing</button><p class="notice">Demo only: marking an item sold records a pending M-Pesa fee request; no money is charged or sent. Listings are saved on this device. Live STK Push requires a secure backend, Safaricom Daraja credentials, a verified recipient/paybill or till setup, and server-side transaction confirmation.</p>
+</form></div></div><div id="toast" class="toast"></div>
+<script>
+const USERS_KEY='tradeliftLimitedUsersV1';
+let currentUser=null;
+function readUsers(){try{const u=JSON.parse(localStorage.getItem(USERS_KEY)||'[]');return Array.isArray(u)?u:[]}catch(e){return []}}
+function writeUsers(users){try{localStorage.setItem(USERS_KEY,JSON.stringify(users))}catch(e){toast('Could not save user record on this device.')}}
+function openLogin(){document.getElementById('loginScreen').classList.remove('hidden')}
+function updateAccountUI(){const b=document.getElementById('accountBtn');const ub=document.getElementById('usersBtn');if(currentUser){b.textContent='Sign out';b.onclick=signOut;ub.style.display=currentUser.role==='admin'?'inline-block':'none'}else{b.textContent='Sign in';b.onclick=openLogin;ub.style.display='none'}}
+function signOut(){currentUser=null;updateAccountUI();openLogin()}
+document.getElementById('loginForm').addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('loginName').value.trim();const phone=document.getElementById('loginPhone').value.trim();const role=document.getElementById('loginRole').value;if(!name||!phone)return;const users=readUsers();let user=users.find(u=>u.phone===phone);const now=new Date().toISOString();if(user){user.name=name;user.role=role;user.lastSeen=now;user.loginCount=(user.loginCount||0)+1}else{user={id:Date.now(),name,phone,role,createdAt:now,lastSeen:now,loginCount:1};users.push(user)}writeUsers(users);currentUser={name,phone,role};document.getElementById('loginScreen').classList.add('hidden');updateAccountUI();toast('Signed in on this device.');});
+function openUsers(){if(!currentUser||currentUser.role!=='admin'){toast('Administrator access required.');return}const users=readUsers();const wrap=document.getElementById('usersTable');wrap.innerHTML=users.length?'<div style="overflow:auto"><table style="width:100%;border-collapse:collapse;margin:12px 0"><thead><tr><th style="text-align:left;padding:8px;border-bottom:1px solid #ddd">Name</th><th style="text-align:left;padding:8px;border-bottom:1px solid #ddd">Phone</th><th style="text-align:left;padding:8px;border-bottom:1px solid #ddd">Role</th><th style="text-align:left;padding:8px;border-bottom:1px solid #ddd">Last seen</th></tr></thead><tbody>'+users.map(u=>'<tr><td style="padding:8px;border-bottom:1px solid #eee">'+esc(u.name)+'</td><td style="padding:8px;border-bottom:1px solid #eee">'+esc(u.phone)+'</td><td style="padding:8px;border-bottom:1px solid #eee">'+esc(u.role)+'</td><td style="padding:8px;border-bottom:1px solid #eee">'+esc(u.lastSeen?new Date(u.lastSeen).toLocaleString():'')+'</td></tr>').join('')+'</tbody></table></div>':'<p>No users registered on this device yet.</p>';document.getElementById('usersBack').classList.add('show')}
+function closeUsers(){document.getElementById('usersBack').classList.remove('show')}
+function exportUsers(){const users=readUsers();const rows=[['Name','Phone','Role','Created at','Last seen','Login count'],...users.map(u=>[u.name,u.phone,u.role,u.createdAt,u.lastSeen,u.loginCount])];const csv=rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='tradelift-users-demo.csv';a.click();URL.revokeObjectURL(a.href)}
+document.getElementById('usersBack').addEventListener('click',e=>{if(e.target.id==='usersBack')closeUsers()});
+const cats=['All','Phones & Electronics','Fashion','Home & Furniture','Vehicles','Property','Beauty & Health','Sports & Outdoors','Baby & Kids','Books & Education','Other'];
+let active='All';const STORAGE_KEY='tradeliftLimitedListingsV1';let items=[
+{id:1,title:'Samsung Galaxy A15',price:14500,category:'Phones & Electronics',location:'Nairobi, Kenya',emoji:'📱'},
+{id:2,title:'Wireless Headphones',price:1800,category:'Phones & Electronics',location:'Thika, Kenya',emoji:'🎧'},
+{id:3,title:'Casual Sneakers',price:2500,category:'Fashion',location:'Kisumu, Kenya',emoji:'👟'},
+{id:4,title:'Two-Seater Sofa',price:12500,category:'Home & Furniture',location:'Nakuru, Kenya',emoji:'🛋️'},
+{id:5,title:'Mountain Bicycle',price:9800,category:'Sports & Outdoors',location:'Eldoret, Kenya',emoji:'🚲'},
+{id:6,title:'Laptop for Study',price:22000,category:'Phones & Electronics',location:'Nairobi, Kenya',emoji:'💻'},
+{id:7,title:'Classic Wristwatch',price:3200,category:'Fashion',location:'Mombasa, Kenya',emoji:'⌚'},
+{id:8,title:'Family Car',price:780000,category:'Vehicles',location:'Nairobi, Kenya',emoji:'🚗'}
+];
+try { const saved=JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]'); if(Array.isArray(saved)) items=[...saved,...items.filter(p=>!saved.some(s=>s.id===p.id))]; } catch(e) {}
+
+let pendingPhotos = [];
+function readPhotoFiles(fileList){
+  const files = Array.from(fileList || []).filter(f => f.type && f.type.startsWith('image/')).slice(0,5);
+  pendingPhotos = [];
+  const preview = document.getElementById('photoPreview');
+  if (!preview) return;
+  preview.innerHTML = '';
+  Promise.all(files.map(file => new Promise(resolve => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const img = new Image();
+      img.onload = () => {
+        const maxSide = 900;
+        const scale = Math.min(1, maxSide / Math.max(img.width, img.height));
+        const canvas = document.createElement('canvas');
+        canvas.width = Math.max(1, Math.round(img.width * scale));
+        canvas.height = Math.max(1, Math.round(img.height * scale));
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        resolve(canvas.toDataURL('image/jpeg', 0.78));
+      };
+      img.onerror = () => resolve('');
+      img.src = reader.result;
+    };
+    reader.onerror = () => resolve('');
+    reader.readAsDataURL(file);
+  }))).then(images => {
+    pendingPhotos = images.filter(Boolean);
+    preview.innerHTML = '';
+    pendingPhotos.forEach(src => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = 'Product photo preview';
+      preview.appendChild(img);
+    });
+  });
+}
+
+function saveItems(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(items.filter(p=>p.userCreated)));}catch(e){toast('Storage is full on this device.');}}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function fmt(n){return 'KSh '+Number(n).toLocaleString('en-KE')}
+function filters(){document.getElementById('filters').innerHTML=cats.map(c=>`<button class="pill ${c===active?'active':''}" onclick="active=${JSON.stringify(c)};filters();render()">${c}</button>`).join('')}
+function render(){let q=document.getElementById('q').value.trim().toLowerCase();let a=items.filter(p=>(active==='All'||p.category===active)&&(!q||(p.title+' '+p.category+' '+p.location).toLowerCase().includes(q)));let s=document.getElementById('sort').value;if(s==='low')a.sort((x,y)=>x.price-y.price);if(s==='high')a.sort((x,y)=>y.price-x.price);if(s==='recent')a.sort((x,y)=>y.id-x.id);document.getElementById('count').textContent=`${a.length} item${a.length===1?'':'s'} · Buyers browse for free`;document.getElementById('grid').innerHTML=a.length?a.map(p=>`<article class="card"><div class="pic"><span class="cat">${esc(p.category)}</span>${p.emoji||'📦'}</div><div class="body"><div class="name" title="${esc(p.title)}">${esc(p.title)}</div><div class="price">${fmt(p.price)}</div><div class="loc">⌖ ${esc(p.location)}</div>${p.sold?`<div class="loc"><b>Sold · Fee status: ${esc(p.feePaymentStatus||'pending')}</b></div>`:`<button class="contact" onclick="startChat(${p.id})">Chat with ${p.userCreated && currentUser && p.ownerPhone===currentUser.phone ? 'buyer' : 'seller'}</button>${p.userCreated?`<button class="contact" onclick="declareSold(${p.id})">Mark as sold</button>`:''}`}</div></article>`).join(''):'<div class="empty">No matching products. Try a different search or category.</div>'}
+
+function declareSold(id){
+ const p=items.find(x=>x.id===id);
+ if(!p||!p.userCreated||p.sold)return;
+ const rate=0.12;
+ const fee=Math.round(Number(p.price)*rate*100)/100;
+ if(!confirm(`Mark "${p.title}" as sold? A M-Pesa STK Push fee request of ${fmt(fee)} (${Math.round(rate*100)}%) should then be sent to the seller at ${p.phone||'their registered number'}. This demo cannot send a real request.`))return;
+ p.sold=true;p.feeAmount=fee;p.feeRate=rate;p.feeRecipient='0791933387';p.feePaymentStatus='pending M-Pesa authorization';p.soldAt=new Date().toISOString();saveItems();render();
+ toast(`Marked sold. ${fmt(fee)} M-Pesa fee is pending. Live STK Push is not connected; no money was deducted.`);
+}
+
+function openListing(){if(!currentUser){toast('Please sign in before listing an item.');openLogin();return}document.getElementById('back').classList.add('show')}function closeListing(){document.getElementById('back').classList.remove('show')}
+const CHATS_KEY='tradeliftLimitedChatsV1';
+let activeChatId=null;
+function readChats(){try{const x=JSON.parse(localStorage.getItem(CHATS_KEY)||'[]');return Array.isArray(x)?x:[]}catch(e){return []}}
+function writeChats(chats){try{localStorage.setItem(CHATS_KEY,JSON.stringify(chats));return true}catch(e){toast('Unable to save messages on this device.');return false}}
+function openChats(){if(!currentUser){toast('Please sign in to use messages.');openLogin();return}document.getElementById('chatBack').classList.add('show');renderChatInbox();if(activeChatId)showChat(activeChatId)}
+function closeChats(){document.getElementById('chatBack').classList.remove('show')}
+function chatParticipants(p){const own=!!(currentUser&&p.ownerPhone&&p.ownerPhone===currentUser.phone);const otherId=own?('buyer-for-'+p.id):(p.ownerPhone||'seller-for-'+p.id);const otherName=own?'Buyer':(p.ownerName||'Seller');return {own,otherId,otherName}}
+function startChat(productId){if(!currentUser){toast('Please sign in to message buyers and sellers.');openLogin();return}const p=items.find(x=>x.id===productId);if(!p){toast('This listing could not be found.');return}const part=chatParticipants(p);const chats=readChats();let thread;if(part.own){thread=chats.find(c=>c.productId===p.id&&c.members.includes(currentUser.phone)&&c.members.some(m=>m!==currentUser.phone));}else{thread=chats.find(c=>c.productId===p.id&&c.members.includes(currentUser.phone)&&c.members.includes(part.otherId));}if(!thread){thread={id:'chat-'+p.id+'-'+Date.now(),productId:p.id,productTitle:p.title,productPrice:p.price,members:[currentUser.phone,part.otherId],memberNames:{[currentUser.phone]:currentUser.name,[part.otherId]:part.otherName},messages:[],updatedAt:new Date().toISOString()};chats.unshift(thread);writeChats(chats)}activeChatId=thread.id;openChats();showChat(activeChatId)}
+function renderChatInbox(){const box=document.getElementById('chatInbox');const chats=readChats().filter(c=>c.members.includes(currentUser.phone)).sort((a,b)=>new Date(b.updatedAt)-new Date(a.updatedAt));box.innerHTML=chats.length?chats.map(c=>{const last=c.messages[c.messages.length-1];const other=c.members.find(m=>m!==currentUser.phone);return `<button class="thread-item ${c.id===activeChatId?'active':''}" onclick="showChat('${esc(c.id)}')"><strong>${esc(c.productTitle)}</strong><small>${esc(c.memberNames[other]||'Buyer/Seller')} · ${esc(last?last.text:'Start the conversation')}</small></button>`}).join(''):'<div class="chat-empty">No conversations yet.<br>Open a product and tap “Chat with seller”.</div>'}
+function showChat(chatId){const c=readChats().find(x=>x.id===chatId&&x.members.includes(currentUser.phone));if(!c)return;activeChatId=chatId;const other=c.members.find(m=>m!==currentUser.phone);document.getElementById('threadHead').innerHTML=`${esc(c.productTitle)} <span class="muted">· ${fmt(c.productPrice)}</span><div class="muted">Chat with ${esc(c.memberNames[other]||'Buyer/Seller')}</div>`;const box=document.getElementById('threadMessages');box.innerHTML=c.messages.length?c.messages.map(m=>`<div class="bubble ${m.sender===currentUser.phone?'mine':''}">${esc(m.text)}<small>${esc(m.senderName)} · ${new Date(m.at).toLocaleString()}</small></div>`).join(''):'<div class="chat-empty">Say hello to discuss this product.</div>';box.scrollTop=box.scrollHeight;renderChatInbox()}
+document.getElementById('chatCompose').addEventListener('submit',e=>{e.preventDefault();if(!currentUser||!activeChatId)return;const input=document.getElementById('chatInput');const message=input.value.trim();if(!message)return;const chats=readChats();const c=chats.find(x=>x.id===activeChatId&&x.members.includes(currentUser.phone));if(!c){toast('Conversation not found.');return}c.messages.push({sender:currentUser.phone,senderName:currentUser.name,text:message,at:new Date().toISOString()});c.updatedAt=new Date().toISOString();if(writeChats(chats)){input.value='';showChat(activeChatId)}});
+document.getElementById('chatBack').addEventListener('click',e=>{if(e.target.id==='chatBack')closeChats()});
+function contactSeller(phone,title){if(!phone){toast('This sample listing has no seller phone number.');return;}const clean=phone.replace(/[^0-9+]/g,'');const msg='Hi, I saw your listing for '+title+' on Tradelift Limited. Is it still available?';location.href='https://wa.me/'+clean.replace(/^0/,'254').replace(/^\+/,'')+'?text='+encodeURIComponent(msg);}
+function toast(m){let t=document.getElementById('toast');t.textContent=m;t.classList.add('show');clearTimeout(window.tt);window.tt=setTimeout(()=>t.classList.remove('show'),3300)}
+document.getElementById('q').addEventListener('input',render);document.getElementById('back').addEventListener('click',e=>{if(e.target.id==='back')closeListing()});
+function updateFeeEstimate(){const price=Math.max(0,Number(document.getElementById('amount').value)||0);const type=document.getElementById('goodsType').value;const rate=0.12;document.getElementById('feeRate').textContent='12% of sale price, due only after a successful sale';document.getElementById('feeAmount').textContent=fmt(Math.round(price*rate*100)/100);}
+document.getElementById('amount').addEventListener('input',updateFeeEstimate);document.getElementById('goodsType').addEventListener('change',updateFeeEstimate);updateFeeEstimate();
+document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();let p={id:Math.max(...items.map(x=>x.id))+1,title:document.getElementById('title').value.trim(),price:Number(document.getElementById('amount').value),category:document.getElementById('category').value,goodsType:document.getElementById('goodsType').value,feeRate:0.12,feeRecipient:'0791933387',paymentMethod:'M-Pesa STK Push',location:document.getElementById('location').value.trim(),emoji:document.getElementById('emoji').value};p.photos=pendingPhotos.slice();p.userCreated=true;p.ownerName=currentUser?currentUser.name:'';p.ownerPhone=currentUser?currentUser.phone:'';p.phone=document.getElementById('phone').value.trim();p.description=document.getElementById('desc').value.trim();items.unshift(p);saveItems();active='All';filters();render();closeListing();e.target.reset();pendingPhotos=[];if(document.getElementById('photoPreview'))document.getElementById('photoPreview').innerHTML='';toast('Listing saved locally. M-Pesa fee request happens after you mark it sold; live payment is not connected.');updateFeeEstimate();document.getElementById('products').scrollIntoView({behavior:'smooth'})});
+filters();render();
+
+document.addEventListener('change', function(ev){
+  if (ev.target && ev.target.id === 'photos') readPhotoFiles(ev.target.files);
+});
+
+</script><script>
+if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => {}));
+}
+</script>
+</body></html>
