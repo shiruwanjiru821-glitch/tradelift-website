@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#062b1d">
+<title>TradeLift Limited | Kenya Marketplace</title>
+<style>
+:root{--deep:#062b1d;--green:#07864f;--mint:#43dda0;--bg:#f4f8f5;--ink:#14291f;--muted:#66766d;--line:#e0eae3;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px Arial,Helvetica,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.top{background:var(--deep);color:white;position:sticky;top:0;z-index:5}.wrap{max-width:1180px;width:calc(100% - 32px);margin:auto}.bar{height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-weight:900;letter-spacing:.5px;font-size:21px}.brand span{color:var(--mint)}.brand small{display:block;font-size:9px;letter-spacing:3px;text-align:center}.nav{display:flex;gap:18px}.nav button,.iconbtn{border:0;background:none;color:#e9f5ee}.nav button.active{color:var(--mint);font-weight:bold}.join,.primary{border:0;border-radius:10px;background:var(--green);color:white;padding:11px 16px;font-weight:bold}.hero{background:linear-gradient(115deg,#062b1d,#087b4b);color:white;padding:54px 0}.heroGrid{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}.eyebrow{color:#80edb8;letter-spacing:2px;font-weight:bold;font-size:12px}.hero h1{font-size:clamp(36px,5vw,56px);line-height:1.05;margin:14px 0}.hero h1 span{color:var(--mint)}.hero p{color:#d5e9dd;line-height:1.7;max-width:560px}.featureGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.feature{background:#ffffff18;border:1px solid #ffffff25;border-radius:15px;padding:18px}.feature b{display:block;margin:7px 0}.feature small{color:#d5e9dd}.content{padding:32px 0 70px}.sectionHead{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}.sectionHead h2{margin:0 0 5px;font-size:27px}.muted{color:var(--muted)}.search{display:flex;align-items:center;gap:10px;background:white;border:1px solid var(--line);border-radius:12px;padding:12px 15px;margin:24px 0 14px}.search input{border:0;outline:0;width:100%}.chips{display:flex;gap:8px;overflow:auto;padding:4px 0 12px}.chip{border:1px solid var(--line);background:white;border-radius:30px;padding:9px 15px;white-space:nowrap}.chip.active{background:var(--green);color:white;border-color:var(--green)}.products{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:14px}.card{background:white;border:1px solid var(--line);border-radius:17px;overflow:hidden}.photo{height:145px;background:#e8f4ec;display:grid;place-items:center;font-size:60px}.productBody{padding:15px}.price{color:var(--green);font-size:19px;font-weight:bold;margin:8px 0}.small{font-size:12px}.wide{width:100%;padding:11px;border:0;border-radius:9px;background:#e6f5ec;color:#087346;font-weight:bold;margin-top:12px}.panel{background:white;border:1px solid var(--line);border-radius:17px;padding:22px;margin-top:22px;max-width:760px}.field{width:100%;border:1px solid #d7e3da;border-radius:10px;padding:12px;background:white;margin:6px 0 12px}.label{font-weight:bold;font-size:13px}.row{display:flex;gap:10px}.row>*{flex:1}.notice{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#14291f;color:white;padding:13px 18px;border-radius:12px;z-index:20;max-width:90%;box-shadow:0 8px 30px #0003}.hidden{display:none!important}.chatbox{display:grid;grid-template-columns:220px 1fr;min-height:320px;border:1px solid var(--line);border-radius:14px;overflow:hidden}.chatlist{background:#f4f8f5;padding:12px;border-right:1px solid var(--line)}.chatmain{padding:15px;display:flex;flex-direction:column}.bubble{background:#e8f5ed;border-radius:13px;padding:10px 13px;max-width:80%;margin:7px 0}.bubble.me{background:#087b4b;color:white;align-self:flex-end}.chatInput{display:flex;gap:8px;margin-top:auto;padding-top:15px}.chatInput input{flex:1;min-width:0;border:1px solid var(--line);border-radius:9px;padding:10px}.footer{background:var(--deep);color:#d5e9dd;padding:28px 0}.modalBg{position:fixed;inset:0;background:#00170fcc;z-index:15;display:grid;place-items:center;padding:15px}.modal{background:white;border-radius:17px;padding:23px;width:min(470px,100%);max-height:90vh;overflow:auto}.role{display:block;width:100%;text-align:left;padding:13px;margin:8px 0;border:1px solid var(--line);border-radius:10px;background:white}.role.selected{border:2px solid var(--green);background:#eaf7ef}.mobileNav{display:none}
+@media(max-width:800px){.nav{display:none}.heroGrid{grid-template-columns:1fr}.products{grid-template-columns:repeat(2,1fr)}.mobileNav{display:flex;position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid var(--line);justify-content:space-around;padding:10px 2px;z-index:8}.mobileNav button{border:0;background:none;font-size:11px;color:var(--muted)}.mobileNav button.active{color:var(--green);font-weight:bold}}
+@media(max-width:520px){.products{grid-template-columns:1fr 1fr;gap:9px}.photo{height:105px;font-size:44px}.productBody{padding:11px}.productBody b{font-size:13px}.price{font-size:16px}.hero{padding:38px 0}.chatbox{grid-template-columns:1fr}.chatlist{display:none}.row{display:block}}
+</style>
+</head>
+<body>
+
+<section id="loginScreen" style="min-height:100vh;background:radial-gradient(circle at 80% 15%,#0b7048 0,#062b1d 48%,#041b13 100%);display:grid;place-items:center;padding:24px;color:white">
+  <div style="width:min(440px,100%)">
+    <div style="text-align:center;margin-bottom:25px">
+      <div style="display:inline-grid;place-items:center;width:58px;height:58px;border-radius:17px;background:#0b9c60;font-size:28px;margin-bottom:12px">↗</div>
+      <div style="font-size:29px;font-weight:900;letter-spacing:.5px">TRADE<span style="color:#43dda0">LIFT</span></div>
+      <div style="font-size:10px;letter-spacing:4px;margin-top:3px;color:#d4eee0">LIMITED</div>
+      <p style="color:#c8e2d4;margin-top:13px">Buy • Sell</p>
+    </div>
+    <div style="background:white;color:#14291f;border-radius:22px;padding:27px;box-shadow:0 25px 80px #0005">
+      <h1 style="font-size:25px;margin:0 0 7px">Welcome back</h1>
+      <p style="color:#66766d;margin:0 0 20px;font-size:14px">Sign in to continue to the TradeLift marketplace.</p>
+      <label class="label" for="loginRole">Account type</label>
+      <select class="field" id="loginRole">
+        <option value="Buyer">Buyer</option>
+        <option value="Seller">Seller</option>
+                <option value="Administrator">Administrator</option>
+      </select>
+      <label class="label" for="loginEmail">Email address</label>
+      <input class="field" id="loginEmail" type="email" autocomplete="email" placeholder="you@example.com" required>
+      <label class="label" for="loginPhone">Phone number</label>
+      <input class="field" id="loginPhone" type="tel" autocomplete="tel" placeholder="07XX XXX XXX" required>
+      <label class="label" for="loginPassword">Password</label>
+      <input class="field" id="loginPassword" type="password" autocomplete="current-password" placeholder="Enter your password">
+      <div id="loginError" style="display:none;color:#b42318;font-size:13px;margin:2px 0 10px"></div>
+      <button class="primary" style="width:100%;padding:13px" onclick="signIn()">Sign in</button>
+      <div style="text-align:center;color:#66766d;font-size:13px;margin:17px 0 10px">New to TradeLift?</div>
+      <button style="width:100%;padding:12px;border:1px solid #07864f;background:white;color:#087346;border-radius:10px;font-weight:bold" onclick="openRegister()">Create an account</button>
+      <p style="font-size:11px;line-height:1.5;color:#718077;margin:17px 0 0">Account security: TradeLift Limited uses verified sign-in for account access. Complete the secure authentication connection before accepting real passwords or granting administrator access.</p>
+    </div>
+    <div style="text-align:center;color:#c8e2d4;font-size:11px;margin-top:18px">© <span id="loginYear"></span> TRADELIFT LIMITED</div>
+  </div>
+</section>
+<div id="appShell" class="hidden">
+<header class="top"><div class="wrap bar">
+  <div class="brand">TRADE<span>LIFT</span><small>LIMITED</small></div>
+  <nav class="nav" id="desktopNav">
+    <button class="active" data-tab="market">Marketplace</button><button data-tab="sell">Sell</button><button data-tab="chat">Messages</button><button data-tab="admin">Admin</button>
+  </nav>
+<button class="join" onclick="logoutUser()">Sign out</button>
+  </div></header>
+<section class="hero"><div class="wrap heroGrid">
+  <div><div class="eyebrow">KENYA'S BUSINESS MARKETPLACE</div><h1>Buy. Sell. Grow.<br><span>Together.</span></h1><p>Discover products, connect with businesses and grow your market from one place. TradeLift brings buyers and sellers together across Kenya.</p><button class="primary" onclick="showTab('market')">Explore marketplace →</button></div>
+  <div class="featureGrid"><div class="feature"><div>🛒</div><b>Buy products</b><small>Find competitive prices</small></div><div class="feature"><div>🏪</div><b>Sell products</b><small>Reach more customers</small></div><div class="feature"><div>📦</div><b>More products</b><small>Discover great deals</small></div><div class="feature"><div>💬</div><b>Chat directly</b><small>Connect with sellers</small></div></div>
+</div></section>
+<main class="wrap content">
+  <div class="sectionHead"><div><h2 id="heading">Explore marketplace</h2><div class="muted">Products and business connections across Kenya</div></div><div><button class="primary" onclick="showTab('sell')">＋ Post a product</button> <button class="primary" onclick="showTab('chat')">Messages</button></div></div>
+  <section id="market">
+    <div class="search">⌕ <input id="search" placeholder="Search products or businesses..." oninput="renderProducts()"></div>
+    <div class="chips" id="chips"></div><div class="products" id="products"></div>
+  </section>
+  <section id="sell" class="hidden">
+    <div class="panel"><h3>Become a seller</h3><p class="muted">Submit your business details for review. Both authorised administrators must approve your application before you can publish products.</p>
+      <button class="primary" onclick="openRegister('Seller')">Apply for seller approval</button>
+      <hr style="border:0;border-top:1px solid var(--line);margin:22px 0">
+      <h3>Post a product (approved sellers)</h3><p class="muted small">Complete the product details below. Only approved seller accounts can publish products.</p>
+      <label class="label">Product name</label><input class="field" id="pname" placeholder="e.g. Fresh tomatoes">
+      <div class="row"><div><label class="label">Category</label><select class="field" id="pcat"><option>Agriculture</option><option>Electronics</option><option>Building</option><option>Food & household</option><option>Fashion</option><option>Other</option></select></div><div><label class="label">Price (KSh)</label><input class="field" id="pprice" type="number" min="1" placeholder="Price"></div></div>
+      <div class="row"><div><label class="label">Quantity available</label><input class="field" id="pqty" type="number" min="0" placeholder="Quantity"></div><div><label class="label">Unit</label><input class="field" id="punit" placeholder="e.g. per kg"></div></div>
+      <label class="label">County / location</label><input class="field" id="plocation" placeholder="e.g. Nairobi">
+      <label class="label">Description</label><textarea class="field" id="pdesc" rows="3" placeholder="Describe the product, quality and delivery details"></textarea>
+      <label class="label">Product photo</label><input class="field" type="file" accept="image/*" id="pimage">
+      <button class="primary" onclick="saveProduct()">Save product details</button>
+    </div>
+  </section>
+  <section id="chat" class="hidden">
+    <div class="panel" style="max-width:none"><h3>TradeLift messages</h3><p class="muted">Buyers and approved sellers can discuss products, prices, delivery and orders. Use TradeLift messages to discuss products, prices, delivery and orders. Private messaging must be connected to verified accounts and the platform messaging service.</p>
+      <div class="chatbox"><aside class="chatlist"><b>Conversations</b><p class="small muted">Sign in to see your conversations.</p><button class="wide" onclick="toast('Connect your account to load conversations.')">New message</button></aside>
+      <div class="chatmain"><div><b>TradeLift messages</b><div class="small muted">Conversation</div></div><div class="bubble">Hello, is this product available?</div><div class="bubble me">Yes, it is available. How many do you need?</div><div class="bubble">Can you deliver to Nairobi?</div><div class="chatInput"><input id="chatText" placeholder="Write a message..." onkeydown="if(event.key==='Enter')sendChat()"><button class="primary" onclick="sendChat()">Send</button></div></div></div>
+      <p class="small muted">Privacy notice: authorised administrators may review conversations for safety, dispute resolution and platform compliance. Users must be informed before using live chat.</p>
+    </div>
+  </section>
+  <section id="admin" class="hidden"><div class="panel"><h3>Administrator sign in</h3><p class="muted">Restricted area for the two authorised administrators. Use secure, separately verified accounts. Do not share a password between administrators.</p><label class="label"> work.<label class="label">Administrator email</label>
+<input class="field" id="adminEmail" type="email" placeholder="admin@example.com">
+<label class="label">Password</label>
+<input class="field" id="adminPassword" type="password" placeholder="Password">
+<button class="primary" onclick="adminSignIn()">Sign in</button>
+<div id="adminStatus"
+ class="small muted"></div><div id="adminPanel" class="hidden">
+  <hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
+  <h4>All products</h4>
+  <div id="adminProducts"></div> <hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
+<h4>Users (buyers & sellers)</h4>
+<input class="field" id="userSearch" placeholder="Search name, email or phone" oninput="saveUser()">
+<select class="field" id="userRoleFilter" onchange="saveUser()">
+  <option value="">All</option><option>Buyer</option><option>Seller</option>
+</select>
+<div id="adminUsers" style="overflow-x:auto"></div> 
+</div><hr style="border:0;border-top:1px solid var(--line);margin:20px 0"><h4>Admin controls planned</h4><ul class="muted"><li>Review seller applications</li><li>Record two independent approvals</li><li>Review product listings</li><li>Review chats with user disclosure and audit logs</li><li>View orders and commission reconciliation</li></ul></div></section>
+  <section class="panel" style="max-width:none"><h3>TradeLift commission</h3><p class="muted">Platform commission is 9% of the successfully paid order amount. Intended recipient: <b>0791933387</b>.</p><div class="row"><div><label class="label">Sale amount (KSh)</label><input class="field" id="sale" type="number" min="0" value="10000" oninput="calcFee()"></div><div><label class="label">Commission (9%)</label><input class="field" id="fee" readonly value="900"></div><div><label class="label">Seller net</label><input class="field" id="net" readonly value="9100"></div></div><p class="small muted">Illustration only. Actual payment splitting/transfers require verified M-Pesa or other payment-provider integration. Confirm the legal treatment of this 9% platform fee with a qualified Kenyan adviser before launch.</p></section>
+</main>
+<footer class="footer"><div class="wrap" style="display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap"><div><b>TRADELIFT LIMITED</b><div class="small">Buy • Sell</div></div><div class="small">© <span id="year"></span> TradeLift Limited. All rights reserved.</div></div></footer>
+<nav class="mobileNav"><button class="active" data-tab="market">🛍️<br>Market</button><button data-tab="sell">🏪<br>Sell</button><button data-tab="chat">💬<br>Chat</button><button data-tab="admin">🔐<br>Admin</button></nav>
+</div><div id="modal" class="modalBg hidden" onclick="if(event.target===this)closeRegister()"><div class="modal"><div style="display:flex;justify-content:space-between;align-items:center"><h2>Create account</h2><button onclick="closeRegister()" style="border:0;background:none;font-size:25px">×</button></div><p class="muted">Choose how you want to use TradeLift.</p><div id="roles"><button class="role selected" data-role="Buyer" onclick="chooseRole(this)">🛒 <b>Buyer</b><div class="small muted">Browse products and contact sellers</div></button><button class="role" data-role="Seller" onclick="chooseRole(this)">🏪 <b>Seller</b><div class="small muted">Apply for approval from both administrators</div></button></div><label class="label" for="regName">Full name *</label><input class="field" id="regName" autocomplete="name" placeholder="Your full name" required><label class="label" for="regPhone">Phone number *</label><input class="field" id="regPhone" type="tel" autocomplete="tel" placeholder="07XX XXX XXX" required><label class="label" for="regEmail">Email address *</label><input class="field" id="regEmail" type="email" autocomplete="email" placeholder="you@example.com" required><label class="label" for="regPassword">Password *</label><input class="field" id="regPassword" type="password" autocomplete="new-password" placeholder="Create a password" required><label class="label" for="regConfirmPassword">Confirm password *</label><input class="field" id="regConfirmPassword" type="password" autocomplete="new-password" placeholder="Confirm your password" required><label class="label">Business name (optional for sellers)</label><input class="field" id="regBusiness" placeholder="Business name"><p class="small muted">Your registration details will be checked by TradeLift Limited. Seller accounts require administrator approval before listing products.</p><button class="primary" style="width:100%" onclick="submitRegistration()">Continue</button></div></div>
+<div id="toast" class="notice hidden">
+</div>
+<script>
+const data=[
+{id:1,name:"Fresh tomatoes",cat:"Agriculture",price:800,unit:"per kg",seller:"Green Farms Ltd",location:"Nairobi",emoji:"🍅",verified:true},
+{id:2,name:"Dry beans",cat:"Agriculture",price:3000,unit:"per 100kg",seller:"Kikuyu Traders",location:"Kiambu",emoji:"🫘",verified:false},
+{id:3,name:"Solar panel 300W",cat:"Electronics",price:18000,unit:"each",seller:"Bright Energy Solutions",location:"Nakuru",emoji:"🔆",verified:true},
+{id:4,name:"Maize Grade 1",cat:"Agriculture",price:2500,unit:"per 90kg",seller:"Fresh Supplies",location:"Meru",emoji:"🌽",verified:true},
+{id:5,name:"Cooking oil",cat:"Food & household",price:4500,unit:"20 litres",seller:"Wholesale Hub",location:"Nairobi",emoji:"🛢️",verified:false},
+{id:6,name:"Urea fertilizer",cat:"Agriculture",price:3200,unit:"per 50kg",seller:"GreenAgri Ltd",location:"Eldoret",emoji:"🌱",verified:true}
+];
+const cats=["All","Agriculture","Electronics","Building","Food & household","Fashion","Other"];let activeCat="All";let selectedRole="Buyer";
+function toast(msg){const el=document.getElementById("toast");el.textContent=msg;el.classList.remove("hidden");clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>el.classList.add("hidden"),3500)}
+function renderProducts(){const q=document.getElementById("search").value.toLowerCase();const list=data.filter(p=>(activeCat==="All"||p.cat===activeCat)&&(`${p.name} ${p.seller} ${p.location}`).toLowerCase().includes(q));document.getElementById("products").innerHTML=list.map(p=>`<article class="card"><div class="photo">${p.emoji}</div><div class="productBody"><b>${p.name}</b><div class="price">KSh ${p.price.toLocaleString()} <span class="small muted">${p.unit}</span></div><div class="small muted">${p.seller} ${p.verified?"✓":""}</div><div class="small muted">${p.location} · ${p.cat}</div><button class="wide" onclick="toast('Sign in to contact this seller and place an order.')">View product & contact seller</button></div></article>`).join("")||'<p class="muted">No products match your search.</p>'}
+function renderChips(){document.getElementById("chips").innerHTML=cats.map(c=>`<button class="chip ${c===activeCat?"active":""}" onclick="activeCat='${c}';renderChips();renderProducts()">${c}</button>`).join("")}
+function showTab(tab){["market","sell","chat","admin"].forEach(id=>document.getElementById(id).classList.toggle("hidden",id!==tab));document.getElementById("heading").textContent=({market:"Explore marketplace",sell:"Sell on TradeLift",chat:"Messages",admin:"Administrator"})[tab];document.querySelectorAll("[data-tab]").forEach(b=>b.classList.toggle("active",b.dataset.tab===tab));window.scrollTo({top:document.querySelector("main").offsetTop-70,behavior:"smooth"})}
+document.querySelectorAll("[data-tab]").forEach(b=>b.addEventListener("click",()=>showTab(b.dataset.tab)));
+function openRegister(role){if(role){selectedRole=role;document.querySelectorAll(".role").forEach(b=>b.classList.toggle("selected",b.dataset.role===role))}document.getElementById("modal").classList.remove("hidden")}
+function closeRegister(){document.getElementById("modal").classList.add("hidden")}
+function chooseRole(btn){selectedRole=btn.dataset.role;document.querySelectorAll(".role").forEach(b=>b.classList.toggle("selected",b===btn))}
+function calcFee(){let n=Math.max(0,Number(document.getElementById("sale").value)||0);let f=Math.round(n*.09);document.getElementById("fee").value=f;document.getElementById("net").value=n-f}
+function saveProduct(){if(!document.getElementById("pname").value||!document.getElementById("pprice").value){toast("Enter a product name and price first.");return}toast("Product details captured in this session. Connect the listing database to publish and synchronise products.")}
+const ADMIN_WA=["254105339063","254754740313"];
+function whatsappAdmin(i,d){
+  d=d||{};
+  const msg="Hello TradeLift, I would like to become a seller."+
+    "\nName: "+(d.name||"")+
+    "\nBusiness: "+(d.business||"")+
+    "\nPhone: "+(d.phone||"")+
+    "\nEmail: "+(d.email||"");
+  window.open("https://wa.me/"+ADMIN_WA[i]+"?text="+encodeURIComponent(msg),"_blank");
+}
+function sendSellerWA(i){
+  const name=document.getElementById("regName").value.trim();
+  const phone=document.getElementById("regPhone").value.trim();
+  if(!name||!phone){toast("Enter your full name and phone number first.");return;}
+  whatsappAdmin(i,{name:name,phone:phone,email:document.getElementById("regEmail").value.trim(),business:document.getElementById("regBusiness").value.trim()});
+}
+document.body.appendChild(document.getElementById("modal"));
+document.body.appendChild(document.getElementById("toast"));
+function sendChat(){let input=document.getElementById("chatText");if(!input.value.trim())return;const b=document.createElement("div");b.className="bubble me";b.textContent=input.value.trim();document.querySelector(".chatmain").insertBefore(b,document.querySelector(".chatInput"));input.value=""}
+
+
+function submitRegistration(){
+  const name=document.getElementById("regName").value.trim();
+  const phone=document.getElementById("regPhone").value.trim();
+  const email=document.getElementById("regEmail").value.trim();
+  const password=document.getElementById("regPassword").value;
+  const confirm=document.getElementById("regConfirmPassword").value;
+  if(!name||!phone||!email||!password||!confirm){
+    toast("Full name, phone number, email and both password fields are required.");
+    return;
+  }
+  if(password!==confirm){
+    toast("The passwords do not match.");
+    return;
+  }
+  toast("Registration details received. Complete secure account-service integration to activate the account.");
+  closeRegister();
+}
+
+function signIn(){
+  const email=document.getElementById("loginEmail").value.trim();
+  const phone=document.getElementById("loginPhone").value.trim();
+  const password=document.getElementById("loginPassword").value;
+  const role=document.getElementById("loginRole").value;
+  const error=document.getElementById("loginError");
+  if(!email||!phone||!password){error.textContent="Email address, phone number and password are all required.";error.style.display="block";return;}
+  error.style.display="none";
+  // Account access must be verified by the connected authentication service before release.
+  document.getElementById("loginScreen").classList.add("hidden");
+  document.getElementById("appShell").classList.remove("hidden");
+  toast("Sign-in details accepted for this session as "+role+". Secure account verification must be enabled before public launch.");
+  if(role==="Administrator") showTab("admin");
+}
+document.getElementById("loginYear").textContent=new Date().getFullYear();
+document.getElementById("year").textContent=new Date().getFullYear();renderChips();renderProducts();calcFee();
+
+</script>
+
+<script type="module">updateDoc import { deleteDoc, doc, setDoc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, addDoc, getDocs, query, orderBy, serverTimestamp }
+  from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+ import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { deleteDoc, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyC8yCvOZF_eIzNA1WoGrju9vUlFmax4WIY",
+  authDomain: "tradelift-425ce.firebaseapp.com",
+  projectId: "tradelift-425ce",
+  storageBucket: "tradelift-425ce.firebasestorage.app",
+  messagingSenderId: "896060730022",
+  appId: "1:896060730022:web:aeb26a7bd9bc1d87eaa267",
+  measurementId: "G-LVK8BW2XM0"
+};
+
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+let products = [];
+
+document.getElementById("products").innerHTML = '<p class="muted">Loading products...</p>';
+
+function esc(s){return String(s ?? "").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+
+function resizeImage(file, maxW = 600) {
+  return new Promise(resolve => {
+    if (!file) return resolve("");
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = new Image();
+      img.onload = () => {
+        const s = Math.min(1, maxW / img.width);
+        const c = document.createElement("canvas");
+        c.width = img.width * s; c.height = img.height * s;
+        c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+        resolve(c.toDataURL("image/jpeg", 0.6));
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+window.renderProducts = function () {
+  const q = document.getElementById("search").value.toLowerCase();
+  const list = products.filter(p =>
+    (activeCat === "All" || p.cat === activeCat) &&
+    `${p.name} ${p.location} ${p.description}`.toLowerCase().includes(q));
+  document.getElementById("products").innerHTML = list.map(p => `
+    <article class="card">
+      <div class="photo">${p.photo ? `<img src="${p.photo}" style="width:100%;height:100%;object-fit:cover">` : "📦"}</div>
+      <div class="productBody">
+        <b>${esc(p.name)}</b>
+        <div class="price">KSh ${Number(p.price).toLocaleString()} <span class="small muted">${esc(p.unit)}</span></div>
+        <div class="small muted">${esc(p.location)} · ${esc(p.cat)}</div>
+        <div class="small muted">${esc(p.description)}</div>
+        <button class="wide" onclick="toast('Sign in to contact this seller and place an order.')">View product & contact seller</button>
+      </div>
+    </article>`).join("") || '<p class="muted">No products yet. Be the first to post one!</p>';
+};
+
+async function loadProducts() {
+  try {
+    const snap = await getDocs(query(collection(db, "products"), orderBy("createdAt", "desc")));
+    products = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+    renderProducts();
+  } catch (e) {
+    console.error(e);
+    toast("Could not load products. Press F12 and check the Console.");
+  }
+}
+
+window.saveProduct = async function () {
+  const name = document.getElementById("pname").value.trim();
+  const price = Number(document.getElementById("pprice").value);
+  if (!name || !price) { toast("Enter a product name and price first."); return; }
+  toast("Saving...");
+  try {
+    const photo = await resizeImage(document.getElementById("pimage").files[0]);
+    await addDoc(collection(db, "products"), {
+      name,
+      price,
+      cat: document.getElementById("pcat").value,
+      qty: Number(document.getElementById("pqty").value) || 0,
+      unit: document.getElementById("punit").value.trim(),
+      location: document.getElementById("plocation").value.trim(),
+      description: document.getElementById("pdesc").value.trim(),
+      photo,
+      createdAt: serverTimestamp()
+    });
+    ["pname","pprice","pqty","punit","plocation","pdesc","pimage"].forEach(id => document.getElementById(id).value = "");
+    toast("Product saved!");
+    await loadProducts();
+    showTab("market");
+  } catch (e) {
+    console.error(e);
+    toast("Could not save. Press F12 and check the Console.");
+  }
+};
+
+loadProducts();
+const auth = getAuth(app);
+window. = function () {
+  document.getElementById("adminPanel").classList.remove("hidden");
+  renderAdminProducts();
+  loadUsers();
+}; = function () {
+  document.getElementById("adminPanel").classList.remove("hidden");
+  renderAdminProducts();
+};
+
+window.renderAdminProducts = function () {
+  document.getElementById("adminProducts").innerHTML = products.map(p => `
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)">
+      <span>${esc(p.name)} · KSh ${Number(p.price).toLocaleString()} · ${esc(p.location)}</span>
+      <button class="wide" style="width:auto;margin:0;padding:6px 12px" onclick="deleteProduct('${p.id}')">Delete</button>
+    </div>`).join("") || '<p class="muted">No products yet.</p>';
+};
+
+let allUsers = [];
+
+window.loadUsers = async function () {
+  const snap = await getDocs(collection(db, "users"));
+  allUsers = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+  renderAdminUsers();
+};
+
+window.renderAdminUsers = function () {
+  const q = document.getElementById("userSearch").value.toLowerCase();
+  const role = document.getElementById("userRoleFilter").value;
+  const list = allUsers.filter(u =>
+    (!role || u.role === role) &&
+    `${u.name} ${u.email} ${u.phone}`.toLowerCase().includes(q));
+  document.getElementById("adminUsers").innerHTML = list.map(u => `
+    <div style="padding:8px 0;border-bottom:1px solid var(--line)">
+      <b>${esc(u.name)}</b> · ${esc(u.role)} · ${esc(u.status)}
+      <input class="field" id="em_${u.id}" value="${esc(u.email)}" placeholder="Email">
+      <input class="field" id="ph_${u.id}" value="${esc(u.phone)}" placeholder="Phone">
+      <button class="wide" style="width:auto;padding:6px 12px" onclick="saveUser('${u.id}')">Save</button>
+    </div>`).join("") || '<p class="muted">No users found.</p>';
+};
+
+let allUsers = [];
+
+window.loadUsers = async function () {
+  const snap = await getDocs(collection(db, "users"));
+  allUsers = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+  renderAdminUsers();
+};
+
+window.renderAdminUsers = function () {
+  const q = document.getElementById("userSearch").value.toLowerCase();
+  const role = document.getElementById("userRoleFilter").value;
+  const list = allUsers.filter(u =>
+    (!role || u.role === role) &&
+    `${u.name} ${u.email} ${u.phone} ${u.business}`.toLowerCase().includes(q));
+
+  document.getElementById("adminUsers").innerHTML = list.length ? `
+    <table style="width:100%;border-collapse:collapse;font-size:13px;min-width:680px">
+      <tr style="text-align:left">
+        <th>Name</th><th>Email</th><th>Phone</th><th>Business</th>
+        <th>Role</th><th>Status</th><th>Joined</th><th></th>
+      </tr>
+      ${list.map(u => `
+        <tr style="border-top:1px solid var(--line)">
+          <td>${esc(u.name)}</td>
+          <td><a href="mailto:${esc(u.email)}">${esc(u.email)}</a></td>
+          <td><a href="tel:${esc(u.phone)}">${esc(u.phone)}</a></td>
+          <td>${esc(u.business)}</td>
+          <td>${esc(u.role)}</td>
+          <td>${esc(u.status)}</td>
+          <td>${u.createdAt?.toDate ? u.createdAt.toDate().toLocaleDateString() : ""}</td>
+          <td><button onclick="editUser('${u.id}')">Edit</button></td>
+        </tr>`).join("")}
+    </table>` : '<p class="muted">No users found.</p>';
+};
+
+window.editUser = async function (id) {
+  const u = allUsers.find(x => x.id === id);
+  const name  = prompt("Name:", u.name || "");   if (name === null) return;
+  const email = prompt("Email:", u.email || ""); if (email === null) return;
+  const phone = prompt("Phone:", u.phone || ""); if (phone === null) return;
+  try {
+    await updateDoc(doc(db, "users", id), {
+      name: name.trim(), email: email.trim(), phone: phone.trim()
+    });
+    toast("User updated.");
+    await loadUsers();
+  } catch (e) { console.error(e); toast("Could not save. Are you signed in as admin?"); }
+};
+window.deleteProduct = async function (id) {
+  if (!confirm("Delete this product?")) return;
+  try {
+    await deleteDoc(doc(db, "products", id));
+    toast("Product deleted.");
+    await loadProducts();
+    renderAdminProducts();
+  } catch (e) {
+    console.error(e);
+    toast("Could not delete. Are you signed in as admin?");
+  }
+};
+const ADMIN_EMAILS = ["shiruwanjiru821@gmail.com", "shemkinoti81@gmail.com"];
+
+let currentProfile = null;
+let registering = false;
+
+async function enterApp(user) {
+  const snap = await getDoc(doc(db, "users", user.uid));
+  currentProfile = snap.exists() ? snap.data() : { role: "Buyer", status: "active" };
+  if (ADMIN_EMAILS.includes(user.email)) currentProfile.role = "Administrator";
+  document.getElementById("loginScreen").classList.add("hidden");
+  document.getElementById("appShell").classList.remove("hidden");
+  toast("Welcome, " + (user.displayName || user.email));
+}
+
+onAuthStateChanged(auth, user => {
+  if (registering) return;
+  if (user) {
+    enterApp(user);
+  } else {
+    currentProfile = null;
+    document.getElementById("appShell").classList.add("hidden");
+    document.getElementById("loginScreen").classList.remove("hidden");
+  }
+});
+
+window.signIn = async function () {
+  const email = document.getElementById("loginEmail").value.trim();
+  const password = document.getElementById("loginPassword").value;
+  const error = document.getElementById("loginError");
+  if (!email || !password) {
+    error.textContent = "Enter your email and password.";
+    error.style.display = "block";
+    return;
+  }
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    error.style.display = "none";
+  } catch (e) {
+    error.textContent = "Wrong email or password.";
+    error.style.display = "block";
+  }
+};
+
+window.submitRegistration = async function () {
+  const name = document.getElementById("regName").value.trim();
+  const phone = document.getElementById("regPhone").value.trim();
+  const email = document.getElementById("regEmail").value.trim();
+  const password = document.getElementById("regPassword").value;
+  const confirm = document.getElementById("regConfirmPassword").value;
+  const business = document.getElementById("regBusiness").value.trim();
+  if (!name || !phone || !email || !password || !confirm) { toast("Fill in all fields marked *."); return; }
+  if (password.length < 8) { toast("Password must be at least 8 characters."); return; }
+  if (password !== confirm) { toast("The passwords do not match."); return; }
+  registering = true;
+  try {
+    const cred = await createUserWithEmailAndPassword(auth, email, password);
+    await updateProfile(cred.user, { displayName: name });
+    await setDoc(doc(db, "users", cred.user.uid), {
+      name, phone, email, business,
+      role: selectedRole,
+      status: selectedRole === "Seller" ? "pending" : "active",
+      createdAt: serverTimestamp()
+    });
+    registering = false;
+    closeRegister();
+    await enterApp(cred.user);
+    if (selectedRole === "Seller") toast("Account created. Your seller application is waiting for approval.");
+  } catch (e) {
+    registering = false;
+    console.error(e);
+    if (e.code === "auth/email-already-in-use") toast("This email is already registered. Please sign in.");
+    else toast("Could not create the account. Check your details and try again.");
+  }
+};
+
+const _saveProduct = window.saveProduct;
+window.saveProduct = async function () {
+  const p = currentProfile;
+  const ok = auth.currentUser && p && (p.role === "Administrator" || (p.role === "Seller" && p.status === "approved"));
+  if (!ok) { toast("Only approved sellers can post products."); return; }
+  return _saveProduct();
+};
+
+window.logoutUser = function () { signOut(auth); };
+window.adminSignIn = async function () {
+  const status = document.getElementById("adminStatus");
+  try {
+    const cred = await signInWithEmailAndPassword(
+      auth,
+      document.getElementById("adminEmail").value.trim(),
+      document.getElementById("adminPassword").value
+    );
+    if (!ADMIN_EMAILS.includes(cred.user.email)) {
+      await signOut(auth);
+      status.textContent = "This account is not an administrator.";
+      return;
+    }
+    status.textContent = "Signed in as admin: " + cred.user.email;
+  showAdminPanel();
+  } catch (e) {
+    status.textContent = "Wrong email or password.";
+  }
+};
+</script>
+
+<script>
+(function () {
+  var ADMIN_WA = ["254105339063", "254754740313"];
+
+  document.body.appendChild(document.getElementById("modal"));
+  document.body.appendChild(document.getElementById("toast"));
+
+  var box = document.createElement("div");
+  box.id = "sellerWA";
+  box.className = "hidden";
+  box.innerHTML =
+    '<p class="small muted">Sellers: send your approval request on WhatsApp.</p>' +
+    '<button class="primary" style="width:100%;margin-top:8px" onclick="sendSellerWA(0)">Send approval request to Admin 1 on WhatsApp</button>' +
+    '<button class="primary" style="width:100%;margin-top:8px" onclick="sendSellerWA(1)">Send approval request to Admin 2 on WhatsApp</button>';
+  document.querySelector("#modal .modal").appendChild(box);
+
+  function sync() { box.classList.toggle("hidden", selectedRole !== "Seller"); }
+
+  var _choose = window.chooseRole;
+  window.chooseRole = function (btn) { _choose(btn); sync(); };
+  var _open = window.openRegister;
+  window.openRegister = function (role) { _open(role); sync(); };
+
+  window.sendSellerWA = function (i) {
+    var name = document.getElementById("regName").value.trim();
+    var phone = document.getElementById("regPhone").value.trim();
+    if (!name || !phone) { toast("Enter your full name and phone number first."); return; }
+    var msg = "Hello TradeLift, I would like to become a seller." +
+      "\nName: " + name +
+      "\nBusiness: " + document.getElementById("regBusiness").value.trim() +
+      "\nPhone: " + phone +
+      "\nEmail: " + document.getElementById("regEmail").value.trim();
+    window.open("https://wa.me/" + ADMIN_WA[i] + "?text=" + encodeURIComponent(msg), "_blank");
+  };
+})();
+</script>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, addDoc, getDocs, getDoc, setDoc, updateDoc, deleteDoc, doc, query, orderBy, where, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+/* ---- fix the page layout so Create account works on the first screen ---- */
+document.body.appendChild($("modal"));
+document.body.appendChild($("toast"));
+["loginRole", "loginPhone"].forEach(id => {
+  $(id).style.display = "none";
+  const l = document.querySelector('label[for="' + id + '"]');
+  if (l) l.style.display = "none";
+});
+const joinBtn = document.querySelector(".join");
+joinBtn.textContent = "Sign out";
+joinBtn.setAttribute("onclick", "logoutUser()");
+
+const sellPanel = document.querySelector("#sell .panel");
+const hr = sellPanel.querySelector("hr");
+const sellForm = document.createElement("div");
+sellForm.id = "sellForm";
+while (hr.nextSibling) sellForm.appendChild(hr.nextSibling);
+sellPanel.appendChild(sellForm);
+sellPanel.querySelector("p.muted").style.display = "none";
+sellPanel.querySelector("button.primary").style.display = "none";
+const sellTitle = sellPanel.querySelector("h3");
+sellTitle.textContent = "Sell on TradeLift";
+sellTitle.insertAdjacentHTML("afterend",
+  '<p class="muted" id="sellStatus"></p>' +
+  '<div id="waBtn" class="hidden"><button class="primary" onclick="whatsappAdmin(0)">Message Admin 1 on WhatsApp</button> <button class="primary" onclick="whatsappAdmin(1)">Message Admin 2 on WhatsApp</button></div>');
+
+document.querySelector("#admin .panel").innerHTML =
+'<h3>Administrator</h3><p class="muted" id="adminNote"></p>' +
+'<h4>User Statistics</h4>' +
+'<div id="userStats" class="panel">Loading user statistics...</div>' +
+    '<h4>Seller applications</h4><div id="pendingSellers"></div>' +
+  '<hr style="border:0;border-top:1px solid var(--line);margin:18px 0">' +
+  '<h4>All products</h4><div id="adminProducts"></div>' +
+'<hr style="border:0;border-top:1px solid var(--line);margin:18px 0">' +
+'<h4>Users (buyers & sellers)</h4>' +
+ '<button class="primary" onclick="loadUsers()">Show all users</button>' +
+'<input class="field" id="userSearch" placeholder="Search name, email or phone" oninput="renderAdminUsers()">' +
+'<select class="field" id="userRoleFilter" onchange="renderAdminUsers()"><option value="">All</option><option>Buyer</option><option>Seller</option></select>' +
+'<div id="adminUsers" style="overflow-x:auto"></div>';
+document.querySelectorAll('[data-tab="admin"]').forEach(b => b.classList.add("hidden"));
+
+/* ---- STEP 1: select the next line and paste your own "const firebaseConfig = {
+  apiKey: "...",
+  authDomain: "...",
+  projectId: "...",
+  ...
+};;" over it ---- */
+const firebaseConfig = {
+  apiKey: "AIzaSyC8yCvOZF_eIzNA1WoGrju9vUlFmax4WIY",
+  authDomain: "tradelift-425ce.firebaseapp.com",
+  projectId: "tradelift-425ce",
+  storageBucket: "tradelift-425ce.firebasestorage.app",
+  messagingSenderId: "896060730022",
+  appId: "1:896060730022:web:aeb26a7bd9bc1d87eaa267",
+  measurementId: "G-LVK8BW2XM0"
+};
+/* ---- STEP 2: the two administrator emails (as added in Firebase Authentication) ---- */
+const ADMIN_EMAILS = ["shiruwanjiru821@gmail.com", "shemkinoti81@gmail.com"];
+/* ---- STEP 3: the two administrator WhatsApp numbers (254 format, no + or spaces) ---- */
+const ADMIN_WA = ["254105339063", "254754740313"];
+
+if (!firebaseConfig.apiKey) {
+  alert("Firebase config is missing. Paste it at STEP 1 in index.html, save, then reload.");
+  throw new Error("Firebase config missing");
+}
+
+const app = initializeApp(firebaseConfig, "tradeliftAdmin");
+const db = getFirestore(app);
+const auth = getAuth(app);
+
+let products = [];
+let pendingList = [];
+let currentProfile = null;
+let registering = false;
+
+const isAdminUser = u => !!u && ADMIN_EMAILS.map(e => e.toLowerCase()).includes((u.email || "").toLowerCase());
+const canPost = () => !!(auth.currentUser && currentProfile && (currentProfile.role === "Administrator" || (currentProfile.role === "Seller" && currentProfile.status === "approved")));
+const waNumber = p => { p = String(p || "").replace(/\D/g, ""); if (p.startsWith("0")) p = "254" + p.slice(1); return p; };
+
+function resizeImage(file, maxW = 600) {
+  return new Promise(resolve => {
+    if (!file) return resolve("");
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = new Image();
+      img.onload = () => {
+        const s = Math.min(1, maxW / img.width);
+        const c = document.createElement("canvas");
+        c.width = img.width * s; c.height = img.height * s;
+        c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+        resolve(c.toDataURL("image/jpeg", 0.6));
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+window.contactSeller = function (btn) {
+  const num = waNumber(btn.dataset.phone);
+  if (!num) { toast("This seller has not added a phone number."); return; }
+  const msg = "Hello, I am interested in your " + btn.dataset.name + " on TradeLift.";
+  window.open("https://wa.me/" + num + "?text=" + encodeURIComponent(msg), "_blank");
+};
+
+/* ---- products ---- */
+window.renderProducts = function () {
+  const q = $("search").value.toLowerCase();
+  const list = products.filter(p => (activeCat === "All" || p.cat === activeCat) &&
+    `${p.name} ${p.sellerName} ${p.location} ${p.description}`.toLowerCase().includes(q));
+  $("products").innerHTML = list.map(p => `
+    <article class="card">
+      <div class="photo">${p.photo ? `<img src="${p.photo}" alt="" style="width:100%;height:100%;object-fit:cover">` : "📦"}</div>
+      <div class="productBody">
+        <b>${esc(p.name)}</b>
+        <div class="price">KSh ${Number(p.price).toLocaleString()} <span class="small muted">${esc(p.unit)}</span></div>
+        <div class="small muted">${esc(p.sellerName)}</div>
+        <div class="small muted">${esc(p.location)} · ${esc(p.cat)}</div>
+        <div class="small muted">${esc(p.description)}</div>
+  <button class="wide" data-phone="${esc(p.sellerPhone)}" data-name="${esc(p.name)}" onclick="contactSeller(this)">View product & contact seller</button>
+              </div>
+    </article>`).join("") || '<p class="muted">No products yet. Be the first to post one!</p>';
+};
+
+async function loadProducts() {
+  try {
+    const snap = await getDocs(query(collection(db, "products"), orderBy("createdAt", "desc")));
+    products = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+    renderProducts();
+    if (currentProfile && currentProfile.role === "Administrator") renderAdminProducts();
+  } catch (e) {
+    console.error(e);
+    toast("Could not load products. Press F12 and check the Console.");
+  }
+}
+
+window.saveProduct = async function () {
+  if (!canPost()) { toast("Only approved sellers can post products."); return; }
+  const name = $("pname").value.trim();
+  const price = Number($("pprice").value);
+  if (!name || !price) { toast("Enter a product name and price first."); return; }
+  toast("Saving...");
+  try {
+    const photo = await resizeImage($("pimage").files[0]);
+    await addDoc(collection(db, "products"), {
+      name, price,
+      cat: $("pcat").value,
+      qty: Number($("pqty").value) || 0,
+      unit: $("punit").value.trim(),
+      location: $("plocation").value.trim(),
+      description: $("pdesc").value.trim(),
+      photo,
+      sellerId: auth.currentUser.uid,
+      sellerName: currentProfile.business || currentProfile.name || auth.currentUser.email,
+      sellerPhone: currentProfile.phone || "",
+      createdAt: serverTimestamp()
+    });
+    ["pname", "pprice", "pqty", "punit", "plocation", "pdesc", "pimage"].forEach(id => $(id).value = "");
+    toast("Product saved!");
+    await loadProducts();
+    showTab("market");
+  } catch (e) {
+    console.error(e);
+    toast("Could not save. Press F12 and check the Console.");
+  }
+};
+
+/* ---- sell tab ---- */
+function updateSellArea() {
+  const p = currentProfile || {};
+  $("sellForm").classList.toggle("hidden", !canPost());
+  $("waBtn").classList.toggle("hidden", !(p.role === "Seller" && p.status !== "approved"));
+  const s = $("sellStatus");
+  if (p.role === "Administrator") s.textContent = "You can post products as an administrator.";
+  else if (p.role === "Seller" && p.status === "approved") s.textContent = "Your seller account is approved. You can post products.";
+  else if (p.role === "Seller" && p.status === "pending") s.textContent = "Your seller application is waiting for approval. Tap a button to message the administrators on WhatsApp.";
+  else if (p.role === "Seller" && p.status === "rejected") s.textContent = "Your seller application was not approved. Please contact TradeLift.";
+  else s.textContent = "You have a Buyer account. To sell, sign out and create a Seller account.";
+}
+
+async function refreshProfile() {
+  const u = auth.currentUser;
+  if (u && currentProfile && currentProfile.role !== "Administrator") {
+    try {
+      const snap = await getDoc(doc(db, "users", u.uid));
+      if (snap.exists()) currentProfile = { ...currentProfile, ...snap.data() };
+    } catch (e) { console.error(e); }
+  }
+  updateSellArea();
+}
+
+window.whatsappAdmin = function (i) {
+  const p = currentProfile || {};
+  const msg = "Hello TradeLift, I applied to become a seller.\nName: " + (p.name || "") + "\nBusiness: " + (p.business || "") + "\nPhone: " + (p.phone || "") + "\nEmail: " + (p.email || "");
+  window.open("https://wa.me/" + ADMIN_WA[i] + "?text=" + encodeURIComponent(msg), "_blank");
+};
+
+let allUsers = [];
+
+window.loadUsers = async function () {
+  const snap = await getDocs(collection(db, "users"));
+  allUsers = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+  renderAdminUsers();
+};
+
+window.renderAdminUsers = function () {
+  const q = document.getElementById("userSearch").value.toLowerCase();
+  const role = document.getElementById("userRoleFilter").value;
+  const list = allUsers.filter(u =>
+    (!role || u.role === role) &&
+    `${u.name} ${u.email} ${u.phone} ${u.business}`.toLowerCase().includes(q));
+
+  document.getElementById("adminUsers").innerHTML = list.length ? `
+    <table style="width:100%;border-collapse:collapse;font-size:13px;min-width:680px">
+      <tr style="text-align:left">
+        <th>Name</th><th>Email</th><th>Phone</th><th>Business</th>
+        <th>Role</th><th>Status</th><th>Joined</th><th></th>
+      </tr>
+      ${list.map(u => `
+        <tr style="border-top:1px solid var(--line)">
+          <td>${esc(u.name)}</td>
+          <td><a href="mailto:${esc(u.email)}">${esc(u.email)}</a></td>
+          <td><a href="tel:${esc(u.phone)}">${esc(u.phone)}</a></td>
+          <td>${esc(u.business)}</td>
+          <td>${esc(u.role)}</td>
+          <td>${esc(u.status)}</td>
+          <td>${u.createdAt?.toDate ? u.createdAt.toDate().toLocaleDateString() : ""}</td>
+          <td><button onclick="editUser('${u.id}')">Edit</button> <button onclick="deleteUser('${u.id}')" style="color:#b42318">Delete</b
+        </tr>`).join("")}
+    </table>` : '<p class="muted">No users found.</p>';
+};
+
+window.editUser = async function (id) {
+  const u = allUsers.find(x => x.id === id);
+  const name  = prompt("Name:", u.name || "");   if (name === null) return;
+  const email = prompt("Email:", u.email || ""); if (email === null) return;
+  const phone = prompt("Phone:", u.phone || ""); if (phone === null) return;
+  try {
+    await updateDoc(doc(db, "users", id), {
+      name: name.trim(), email: email.trim(), phone: phone.trim()
+    });
+    toast("User updated.");
+    await loadUsers();
+  } catch (e) { console.error(e); toast("Could not save. Are you signed in as admin?"); }
+};
+
+window.deleteUser = async function (id) {
+  const u = allUsers.find(x => x.id === id);
+  if (!u) return;
+  if (!currentProfile || currentProfile.role !== "Administrator") {
+    toast("Only administrators can delete users."); return;
+  }
+  if (ADMIN_EMAILS.includes(u.email)) {
+    toast("Administrator accounts cannot be deleted."); return;
+  }
+  if (!confirm("Delete " + (u.name || u.email) + " (" + u.role + ")? This cannot be undone.")) return;
+  try {
+    await deleteDoc(doc(db, "users", id));
+    toast("User deleted.");
+    await loadUsers();
+    loadUserStats();
+    loadPendingSellers();
+  } catch (e) { console.error(e); toast("Could not delete. Are you signed in as admin?"); }
+};
+/* ---- admin ---- */
+async function loadPendingSellers() {
+  const box = $("pendingSellers");
+  try {
+    const snap = await getDocs(query(collection(db, "users"), where("status", "==", "pending")));
+    pendingList = snap.docs.map(d => ({ uid: d.id, ...d.data() }));
+    box.innerHTML = pendingList.map((u, i) => `
+      <div style="padding:8px 0;border-bottom:1px solid var(--line)">
+        <b>${esc(u.name)}</b> · ${esc(u.business || "no business name")}<br>
+        <span class="small muted">${esc(u.phone)} · ${esc(u.email)}</span><br>
+        <button class="wide" style="width:auto;padding:6px 12px" onclick="decideSeller(${i},'approved')">Approve</button>
+        <button class="wide" style="width:auto;padding:6px 12px;background:#fde8e8;color:#b42318" onclick="decideSeller(${i},'rejected')">Reject</button>
+      </div>`).join("") || '<p class="muted">No applications waiting.</p>';
+  } catch (e) {
+    console.error(e);
+    box.innerHTML = '<p class="muted">Could not load applications. Check the Firestore rules.</p>';
+  }
+}
+
+async function loadUserStats() {
+  const box = $("userStats");
+
+  try {
+    const snap = await getDocs(collection(db, "users"));
+    const users = snap.docs.map(d => d.data());
+
+    const buyers = users.filter(u => u.role === "Buyer").length;
+    const sellers = users.filter(u => u.role === "Seller");
+    const pending = sellers.filter(u => u.status === "pending").length;
+    const approved = sellers.filter(u => u.status === "approved").length;
+    const rejected = sellers.filter(u => u.status === "rejected").length;
+
+    box.innerHTML = `
+      <p>Total users: <b>${users.length}</b></p>
+      <p>Buyers: <b>${buyers}</b></p>
+      <p>Total sellers: <b>${sellers.length}</b></p>
+      <p>Approved sellers: <b>${approved}</b></p>
+      <p>Pending sellers: <b>${pending}</b></p>
+      <p>Rejected sellers: <b>${rejected}</b></p>
+    `;
+  } catch (error) {
+    console.error(error);
+    box.textContent = "Could not load user statistics.";
+  }
+}
+window.decideSeller = async function (i, decision) {
+  const u = pendingList[i];
+  if (!u) return;
+  try {
+    await updateDoc(doc(db, "users", u.uid), { status: decision });
+    toast("Seller " + decision + ".");
+    loadPendingSellers();
+    const msg = decision === "approved"
+      ? "Hello " + u.name + ", your TradeLift seller account is approved. Open the Sell tab to post your products."
+      : "Hello " + u.name + ", your TradeLift seller application was not approved. Please contact us for details.";
+    window.open("https://wa.me/" + waNumber(u.phone) + "?text=" + encodeURIComponent(msg), "_blank");
+  } catch (e) {
+    console.error(e);
+    toast("Could not update. Are you signed in as admin?");
+  }
+};
+
+function renderAdminProducts() {
+  $("adminProducts").innerHTML = products.map(p => `
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)">
+      <span>${esc(p.name)} · KSh ${Number(p.price).toLocaleString()} · ${esc(p.location)} · ${esc(p.sellerName)}</span>
+      <button class="wide" style="width:auto;margin:0;padding:6px 12px" onclick="deleteProduct('${p.id}')">Delete</button>
+    </div>`).join("") || '<p class="muted">No products yet.</p>';
+}
+window.deleteProduct = async function (id) {
+  if (!confirm("Delete this product?")) return;
+  try {
+    await deleteDoc(doc(db, "products", id));
+    toast("Product deleted.");
+    await loadProducts();
+  } catch (e) {
+    console.error(e);
+    toast("Could not delete. Are you signed in as admin?");
+  }
+};
+
+/* ---- tabs ---- */
+const _showTab = window.showTab;
+window.showTab = function (tab) {
+  if (tab === "admin" && !(currentProfile && currentProfile.role === "Administrator")) { toast("Administrators only."); return; }
+  _showTab(tab);
+  if (tab === "sell") refreshProfile();
+};
+
+/* ---- accounts ---- */
+async function enterApp(user) {
+  let profile = { role: "Buyer", status: "active", name: user.displayName || "", email: user.email };
+  try {
+    const snap = await getDoc(doc(db, "users", user.uid));
+    if (snap.exists()) profile = { ...profile, ...snap.data() };
+  } catch (e) { console.error(e); }
+  if (isAdminUser(user)) { profile.role = "Administrator"; profile.status = "active"; }
+  currentProfile = profile;
+  $("loginScreen").classList.add("hidden");
+  $("appShell").classList.remove("hidden");
+  const admin = profile.role === "Administrator";
+  document.querySelectorAll('[data-tab="admin"]').forEach(b => b.classList.toggle("hidden", !admin));
+  if (admin) {
+    $("adminNote").textContent = "Signed in as " + user.email;
+    loadPendingSellers();
+    loadUserStats();
+    renderAdminProducts();
+  }
+  updateSellArea();
+  _showTab("market");
+  setTimeout(() => window.scrollTo(0, 0), 100);
+  toast("Welcome, " + (profile.name || user.email));
+}
+
+onAuthStateChanged(auth, user => {
+  if (registering) return;
+  if (user) enterApp(user);
+  else {
+    currentProfile = null;
+    $("appShell").classList.add("hidden");
+    $("loginScreen").classList.remove("hidden");
+  }
+});
+
+window.signIn = async function () {
+  const email = $("loginEmail").value.trim();
+  const password = $("loginPassword").value;
+  const error = $("loginError");
+  if (!email || !password) { error.textContent = "Enter your email and password."; error.style.display = "block"; return; }
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    error.style.display = "none";
+    $("loginPassword").value = "";
+  } catch (e) {
+    console.error(e);
+    error.textContent = e.code === "auth/too-many-requests" ? "Too many attempts. Please wait a few minutes." : "Wrong email or password.";
+    error.style.display = "block";
+  }
+};
+
+window.submitRegistration = async function () {
+  const name = $("regName").value.trim();
+  const phone = $("regPhone").value.trim();
+  const email = $("regEmail").value.trim();
+  const password = $("regPassword").value;
+  const confirmPw = $("regConfirmPassword").value;
+  const business = $("regBusiness").value.trim();
+  if (!name || !phone || !email || !password || !confirmPw) { toast("Fill in all fields marked *."); return; }
+  if (password.length < 8) { toast("Password must be at least 8 characters."); return; }
+  if (password !== confirmPw) { toast("The passwords do not match."); return; }
+  registering = true;
+  try {
+    const cred = await createUserWithEmailAndPassword(auth, email, password);
+    await updateProfile(cred.user, { displayName: name });
+    await setDoc(doc(db, "users", cred.user.uid), {
+      name, phone, email, business,
+      role: selectedRole,
+      status: selectedRole === "Seller" ? "pending" : "active",
+      createdAt: serverTimestamp()
+    });
+    registering = false;
+    closeRegister();
+    await enterApp(cred.user);
+    if (selectedRole === "Seller") toast("Account created. Open the Sell tab to message the administrators on WhatsApp.");
+  } catch (e) {
+    registering = false;
+    console.error(e);
+    if (e.code === "auth/email-already-in-use") toast("This email is already registered. Please sign in.");
+    else if (e.code === "auth/operation-not-allowed") toast("Email sign-up is not switched on in Firebase yet.");
+    else toast("Could not create the account. Press F12 and check the Console.");
+  }
+};
+
+window.logoutUser = function () { signOut(auth); };
+
+loadProducts();
+</script>
+</body>
+</html>
